@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   validates :name, presence: true, length: { maximum: 250 }
+  has_many :expenses, foreign_key: :author_id
+  has_many :categories, through: :expenses
 end

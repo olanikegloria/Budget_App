@@ -1,0 +1,18 @@
+<div id="<%= dom_id category %>">
+  <p>
+    <strong>Name:</strong>
+    <%= link_to category.name, category_expenses_url(category) %>
+  </p>
+
+  <p>
+    <strong>Icon:</strong>
+    <%= category.icon %>
+  </p>
+
+  <p>
+    <strong>Total Amount:</strong>$
+    <%= category.total_amount(current_user) %>
+  </p>
+
+
+</div>
