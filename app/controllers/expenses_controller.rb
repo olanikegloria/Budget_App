@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
   # GET /expenses or /expenses.json
   def index
     @category = Category.find(params[:category_id])
-    @expenses = current_user.expenses
+    @expenses = current_user.expenses.order(created_at: :desc)
   end
 
   # GET /expenses/1 or /expenses/1.json
