@@ -1,14 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<div class='expense'>
+  <h2><%= @category.name%> : $<%= @category.total_amount(current_user)%> </h2>
 
-<h1>Expenses</h1>
+  <ul id="expenses">
+    <% @expenses.each do |expense| %>
+      <%= render expense %>
+    <% end %>
+  </ul>
 
-<div id="expenses">
-  <% @expenses.each do |expense| %>
-    <%= render expense %>
-    <p>
-      <%= link_to "Show this expense",category_expense_path(@category, expense) %>
-    </p>
-  <% end %>
+  <%= link_to "New expense", new_category_expense_path, class: 'button-primary' %>
 </div>
-
-<%= link_to "New expense", new_category_expense_path(@category)%>

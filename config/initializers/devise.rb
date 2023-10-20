@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'a1ef9cdb3889794f364403d5245304c867014111fc85bb68071cfc115692972547d88597d3910ef6c489e527a62bf508b7e5f653ee0f16e6cd6d0378e1cc4772'
+  # config.secret_key = 'e076f3a6d8bf843fddaa8b67c6a093a38c24ecb68081641c4bedc5c3b9e463031b873e872f22deab7e3641eb144de01bb72495982a420971069ca1dd24adc1f7'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -24,7 +24,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'bennymakomo@gmail.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'fe0dac166263f95b02d52b5e801ddc91fb81938db74be14d3ca5e48dfe64bd1de24f47c347831e47299dc72af3c08f554e833dcfb2e55f432302de49ff1d8334'
+  # config.pepper = '86991dd34891a0947c8e791c0a5c4841b453b3f90a1bb75882f58459fa4b66b551309e68cd34eaaebec2fa872ebd97dd01da968a026f5bf50610672d124f4ecc'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -157,7 +157,7 @@ Devise.setup do |config|
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
-  config.reconfirmable = true
+  config.reconfirmable = false
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
@@ -305,6 +305,7 @@ Devise.setup do |config|
   config.responder.error_status = :unprocessable_entity
   config.responder.redirect_status = :see_other
 
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
   # ==> Configuration for :registerable
 
   # When set to false, does not sign a user in automatically after their password is

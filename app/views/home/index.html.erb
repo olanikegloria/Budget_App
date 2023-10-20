@@ -1,0 +1,23 @@
+<% unless current_user %>
+    <div class='home-options'>
+        <h1>Wallet Aid</h1>
+        <div class='home-btns'>
+            <%= link_to 'Log in', new_user_session_path, class: 'button-primary' %>
+            <%= link_to 'Sign up', new_user_registration_path, class: 'btn' %>
+        </div>
+    </div>
+<% else %>
+    <div class='home'>
+        <ul class='categories'>
+            <% @categories.each do |category|%>
+                <li>
+                    <%= image_tag 'https://source.unsplash.com/random', alt: category.icon %>
+                    <%= link_to category.name, category_expenses_path(category) %>
+                    <p>$<%= category.total_amount(current_user) %></p>
+                </li>
+            <% end %>
+        </ul>
+
+        <%= link_to "Add new category", new_category_path, class: 'button-primary new-cat' %>
+    </div>
+<% end %>

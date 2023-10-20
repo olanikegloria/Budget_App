@@ -1,24 +1,188 @@
-# README
+<a name="readme-top"></a>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<div align="center">
+  <h1><b>Wallet Aid</b></h1>
 
-Things you may want to cover:
+</div>
 
-* Ruby version
+<!-- TABLE OF CONTENTS -->
 
-* System dependencies
+# 📗 Table of Contents
 
-* Configuration
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+- [💻 Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-* Database creation
+<!-- PROJECT DESCRIPTION -->
 
-* Database initialization
+# 📖 Wallet Aid <a name="about-project"></a>
 
-* How to run the test suite
+**Wallet Aid** is a a web app that allow users to keep tracking of their expenses by grouping them into categories. It's essentially build in Ruby on Rails.
 
-* Services (job queues, cache servers, search engines, etc.)
+## 🛠 Built With <a name="built-with"></a>
 
-* Deployment instructions
+### Tech Stack <a name="tech-stack"></a>
 
-* ...
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://ruby.com/">Ruby</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://rails.com/">Rails</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
+
+<!-- Features -->
+
+### Key Features <a name="key-features"></a>
+
+
+- **Sign Up**
+- **Log in**
+- **Create Category**
+- **Create Expense**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://wallet-aid.onrender.com/)
+- [Video presentation](https://www.loom.com/share/2a7ee4426c6044149b3747594991dc42?sid=cb3b19aa-dc4e-4596-9694-8102beeca26e)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+
+ - Ruby: apt install ruby-full
+ - Bundler: gem install bundler
+ - Rails: gem install rails
+
+### Setup
+
+Clone this repository to your desired folder:
+```sh
+cd my-folder
+git clone https://github.com/BenM4k/rails_capstone.git
+```
+
+### Install
+
+Install this project with:
+
+```sh
+cd rails_capstone
+gem install
+bundle install
+```
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+rails db:create
+rails server
+```
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  rspec spec
+```
+
+<!-- ### Deployment
+
+You can deploy this project using: -->
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+
+👤 **Benedict Makomo**
+
+- GitHub: [Github](https://github.com/BenM4k)
+- LinkedIn: [Linkedin](https://www.linkedin.com/in/benedict-makomo/)
+- X: [X](https://twitter.com/______ANOMALY)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Delete category**
+- [ ] **Delete expense**
+- [ ] **User authorization**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/BenM4k/BlogApp/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project, I encourage you to clone, fork, contribute, and consider adding a ⭐️. Our community and knowledge grows with each engagement.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank Microverse for the idea for this project as well as Gregoire Vella for the implementation of the [design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) in use on this application.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
