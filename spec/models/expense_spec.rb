@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Expense, type: :model do
   before :each do
-    user = User.create(name: 'Tester', email: 'foo@bar.com', password: 'password', confirmed_at: Time.now)
+    user = User.create(name: 'Tester', email: 'foo@bar.com', password: 'password')
     @expense = Expense.create(name: 'Food', amount: 50, author_id: user.id)
   end
 

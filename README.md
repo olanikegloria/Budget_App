@@ -71,8 +71,8 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://wallet-aid.onrender.com/)
-- [Video presentation](https://www.loom.com/share/2a7ee4426c6044149b3747594991dc42?sid=cb3b19aa-dc4e-4596-9694-8102beeca26e)
+- [Live Demo Link]()
+- [Video presentation]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -95,7 +95,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 ```sh
 cd my-folder
-git clone https://github.com/BenM4k/rails_capstone.git
+git clone https://github.com/olanikegloria/Budget_App.git
 ```
 
 ### Install
@@ -135,11 +135,10 @@ You can deploy this project using: -->
 ## 👥 Authors <a name="authors"></a>
 
 
-👤 **Benedict Makomo**
+👤 **Olanike Olatunji**
 
-- GitHub: [Github](https://github.com/BenM4k)
-- LinkedIn: [Linkedin](https://www.linkedin.com/in/benedict-makomo/)
-- X: [X](https://twitter.com/______ANOMALY)
+- GitHub: [Github](https://github.com/olanikegloria)
+- LinkedIn: [Linkedin](https://www.linkedin.com/in/olani/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
