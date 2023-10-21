@@ -72,7 +72,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://budgetapp-rqxg.onrender.com)
-- [Video presentation](https://www.loom.com/share/32ac455bd4a34e1494b6ce88915f6849)
+- [Video presentation](https://www.loom.com/share/6bc13136a5a9439c93594e1ac88929b9?sid=d2c84736-c13b-4538-916d-6408b114e50d)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
