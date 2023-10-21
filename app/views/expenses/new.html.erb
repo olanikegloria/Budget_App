@@ -1,0 +1,11 @@
+<div class='new-category'>
+  <h1>New expense</h1>
+
+  <%= render "form", expense: @expense %>
+
+  <br>
+
+  <div class='back button-primary'>
+    <%= link_to "Back to expenses", category_expenses_path %>
+  </div>
+</div>

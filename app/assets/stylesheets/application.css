@@ -1,0 +1,259 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: rgb(235, 235, 235);
+  max-width: 450px;
+  height: 85vh;
+  margin: 0 auto;
+  overflow: scroll;
+}
+
+.button-primary {
+  background-color: #3778c2;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 10px 20px;
+}
+
+nav {
+  background-color: #3778c2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  padding: 5px;
+  height: 100px;
+}
+
+nav ul {
+  display: flex;
+  gap: 5px;
+}
+
+nav a,
+nav ul li a {
+  color: #fff;
+  font-size: 40px;
+  font-weight: bolder;
+  padding-left: 10px;
+}
+
+nav button {
+  border: none;
+  background: none;
+  font-weight: 600;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.notice,
+.alert {
+  background-color: #5fb523;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.home-options h1 {
+  margin-top: 200px;
+}
+
+.home-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  width: 100%;
+  gap: 5px;
+}
+
+.home-btns a {
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.home-btns .btn {
+  color: gray;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  gap: 15px;
+  padding: 0 10px;
+  color: #030303;
+}
+
+.categories li {
+  background-color: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 80px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.new-cat {
+  margin-top: auto;
+  display: block;
+  width: 100%;
+  border-radius: 0;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.categories li img {
+  height: 100%;
+  width: 20%;
+}
+
+.expense a {
+  margin-top: auto;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.categories li a {
+  flex: 1;
+  color: #030303;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.categories li p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.new_user input {
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.expense {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.expense h2 {
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.expense ul {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.expense ul .expense-item {
+  background-color: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 80px;
+  padding: 5px;
+}
+
+.new-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.new-category form {
+  padding-top: 150px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.new-category form .submit {
+  margin-top: auto;
+}
+
+.new-category input {
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.new-category form .submit input {
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+.new-category .back {
+  margin-top: auto;
+  width: 100%;
+  padding: 20px;
+}
+
+.new-category .back a {
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  display: block;
+}

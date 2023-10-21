@@ -1,0 +1,11 @@
+<div class='expense'>
+  <h2><%= @category.name%> : $<%= @category.total_amount(current_user)%> </h2>
+
+  <ul id="expenses">
+    <% @expenses.each do |expense| %>
+      <%= render expense %>
+    <% end %>
+  </ul>
+
+  <%= link_to "New expense", new_category_expense_path, class: 'button-primary' %>
+</div>
