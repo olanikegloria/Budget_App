@@ -71,8 +71,8 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
-- [Video presentation]()
+- [Live Demo Link](https://budgetapp-rqxg.onrender.com)
+- [Video presentation](https://www.loom.com/share/32ac455bd4a34e1494b6ce88915f6849)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,7 +158,7 @@ You can deploy this project using: -->
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/BenM4k/BlogApp/issues).
+Feel free to check the [issues page](https://github.com/olanikegloria/Budget_App/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

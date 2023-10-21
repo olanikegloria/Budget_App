@@ -437,3 +437,520 @@ Migrating to AddDeviseToUsers (20231020153509)
   [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(6274672617390666090)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:38:46 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 38.5ms | Allocations: 1414)
+  Rendered home/_navbar.html.erb (Duration: 17.2ms | Allocations: 369)
+  Rendered layout layouts/application.html.erb (Duration: 1995.5ms | Allocations: 36047)
+Completed 200 OK in 2310ms (Views: 2065.2ms | ActiveRecord: 0.0ms | Allocations: 42461)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-10-20 16:38:57 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 17.7ms | Allocations: 237)
+  Rendered devise/shared/_links.html.erb (Duration: 27.7ms | Allocations: 601)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 175.4ms | Allocations: 4115)
+  Rendered home/_navbar.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 404.3ms | Allocations: 6427)
+Completed 200 OK in 511ms (Views: 434.2ms | ActiveRecord: 3.8ms | Allocations: 13646)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-10-20 16:39:17 +0100
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"gloria", "email"=>"olanikegloria2020@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "olanikegloria2020@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "gloria"], ["created_at", "2023-10-20 15:39:18.355315"], ["updated_at", "2023-10-20 15:39:18.355315"], ["email", "olanikegloria2020@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/categories
+Completed 303 See Other in 493ms (ActiveRecord: 5.1ms | Allocations: 10795)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-10-20 16:39:18 +0100
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:6
+  Rendered categories/index.html.erb within layouts/application (Duration: 23.1ms | Allocations: 953)
+  Rendered home/_navbar.html.erb (Duration: 1.2ms | Allocations: 1200)
+  Rendered layout layouts/application.html.erb (Duration: 220.7ms | Allocations: 4458)
+Completed 500 Internal Server Error in 312ms (ActiveRecord: 1.9ms | Allocations: 7034)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"expenses"}, missing required keys: [:category_id]):
+     5:         <h2>Wallet Aid</h2>
+     6:       <% elsif current_page?(new_category_path) %>
+     7:         <li><%= link_to '&#8249;'.html_safe, root_path %></li>
+     8:       <% elsif current_page?(new_category_expense_path) %>
+     9:         <% @category = Category.find(params[:category_id]) %>
+    10:         <li><%= link_to '&#8249;'.html_safe, category_expenses_path(@category) %></li>
+    11:       <% else %>
+  
+app/views/home/_navbar.html.erb:8
+app/views/layouts/application.html.erb:15
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-10-20 16:46:44 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 177ms (ActiveRecord: 5.9ms | Allocations: 10846)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:46:45 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:1
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/home/index.html.erb:12
+  Rendered home/index.html.erb within layouts/application (Duration: 36.4ms | Allocations: 2400)
+  Rendered home/_navbar.html.erb (Duration: 13.3ms | Allocations: 646)
+  Rendered layout layouts/application.html.erb (Duration: 2071.1ms | Allocations: 37233)
+Completed 200 OK in 2302ms (Views: 2118.9ms | ActiveRecord: 1.5ms | Allocations: 41722)
+
+
+Started GET "/categories/1/expenses" for 127.0.0.1 at 2023-10-20 16:47:05 +0100
+Processing by ExpensesController#index as HTML
+  Parameters: {"category_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:7:in `index'
+Completed 404 Not Found in 59ms (ActiveRecord: 4.2ms | Allocations: 3489)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Category with 'id'=1):
+  
+app/controllers/expenses_controller.rb:7:in `index'
+Started GET "/categories" for 127.0.0.1 at 2023-10-20 16:47:14 +0100
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:6
+  Rendered categories/index.html.erb within layouts/application (Duration: 20.4ms | Allocations: 881)
+  Rendered home/_navbar.html.erb (Duration: 1.6ms | Allocations: 1168)
+  Rendered layout layouts/application.html.erb (Duration: 240.3ms | Allocations: 4342)
+Completed 500 Internal Server Error in 327ms (ActiveRecord: 1.2ms | Allocations: 6557)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"expenses"}, missing required keys: [:category_id]):
+     5:         <h2>Wallet Aid</h2>
+     6:       <% elsif current_page?(new_category_path) %>
+     7:         <li><%= link_to '&#8249;'.html_safe, root_path %></li>
+     8:       <% elsif current_page?(new_category_expense_path) %>
+     9:         <% @category = Category.find(params[:category_id]) %>
+    10:         <li><%= link_to '&#8249;'.html_safe, category_expenses_path(@category) %></li>
+    11:       <% else %>
+  
+app/views/home/_navbar.html.erb:8
+app/views/layouts/application.html.erb:15
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:47:21 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:1
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/home/index.html.erb:12
+  Rendered home/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1678)
+  Rendered home/_navbar.html.erb (Duration: 0.4ms | Allocations: 243)
+  Rendered layout layouts/application.html.erb (Duration: 186.8ms | Allocations: 4121)
+Completed 200 OK in 231ms (Views: 187.5ms | ActiveRecord: 0.9ms | Allocations: 4400)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2023-10-20 16:47:26 +0100
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 42.8ms | Allocations: 1830)
+  Rendered categories/new.html.erb within layouts/application (Duration: 65.7ms | Allocations: 2146)
+  Rendered home/_navbar.html.erb (Duration: 0.5ms | Allocations: 301)
+  Rendered layout layouts/application.html.erb (Duration: 183.3ms | Allocations: 4634)
+Completed 200 OK in 238ms (Views: 186.1ms | ActiveRecord: 0.5ms | Allocations: 8392)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-10-20 16:47:34 +0100
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"school", "icon"=>"images"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:26:in `block in create'
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "school"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:26:in `block in create'
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "school"], ["icon", "images"], ["created_at", "2023-10-20 15:47:34.964503"], ["updated_at", "2023-10-20 15:47:34.964503"]]
+  ↳ app/controllers/categories_controller.rb:26:in `block in create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:26:in `block in create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 68ms (ActiveRecord: 4.2ms | Allocations: 6159)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:47:35 +0100
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:1
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mExpense Sum (0.8ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/models/category.rb:9:in `total_amount'
+  Rendered home/index.html.erb within layouts/application (Duration: 265.7ms | Allocations: 12010)
+  Rendered home/_navbar.html.erb (Duration: 0.7ms | Allocations: 243)
+  Rendered layout layouts/application.html.erb (Duration: 422.1ms | Allocations: 14486)
+Completed 200 OK in 470ms (Views: 419.0ms | ActiveRecord: 4.7ms | Allocations: 14807)
+
+
+Started GET "/categories/1/expenses" for 127.0.0.1 at 2023-10-20 16:47:42 +0100
+Processing by ExpensesController#index as HTML
+  Parameters: {"category_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/index.html.erb within layouts/application
+  [1m[36mExpense Sum (1.0ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/models/category.rb:9:in `total_amount'
+  [1m[36mExpense Load (1.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2 ORDER BY "expenses"."created_at" DESC[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/views/expenses/index.html.erb:5
+  Rendered expenses/index.html.erb within layouts/application (Duration: 26.7ms | Allocations: 1867)
+  Rendered home/_navbar.html.erb (Duration: 0.6ms | Allocations: 350)
+  Rendered layout layouts/application.html.erb (Duration: 174.9ms | Allocations: 4502)
+Completed 200 OK in 259ms (Views: 185.4ms | ActiveRecord: 3.2ms | Allocations: 8000)
+
+
+Started GET "/categories/1/expenses/new" for 127.0.0.1 at 2023-10-20 16:47:46 +0100
+Processing by ExpensesController#new as HTML
+  Parameters: {"category_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:17:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/new.html.erb within layouts/application
+  Rendered expenses/_form.html.erb (Duration: 197.5ms | Allocations: 10206)
+  Rendered expenses/new.html.erb within layouts/application (Duration: 232.4ms | Allocations: 10539)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/_navbar.html.erb:9
+  Rendered home/_navbar.html.erb (Duration: 3.7ms | Allocations: 836)
+  Rendered layout layouts/application.html.erb (Duration: 373.9ms | Allocations: 13556)
+Completed 200 OK in 456ms (Views: 375.8ms | ActiveRecord: 1.1ms | Allocations: 18203)
+
+
+Started POST "/categories/1/expenses" for 127.0.0.1 at 2023-10-20 16:47:55 +0100
+Processing by ExpensesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "expense"=>{"name"=>"book", "amount"=>"20"}, "commit"=>"Create Expense", "category_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/expenses_controller.rb:31:in `block in create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 AND "categories"."id" != $2 LIMIT $3[0m  [["name", "school"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:31:in `block in create'
+  [1m[36mExpense Create (1.7ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "book"], ["amount", 20], ["created_at", "2023-10-20 15:47:56.181265"], ["updated_at", "2023-10-20 15:47:56.181265"], ["author_id", 1]]
+  ↳ app/controllers/expenses_controller.rb:31:in `block in create'
+  [1m[36mCategoryExpense Create (1.0ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 1], ["expense_id", 1], ["created_at", "2023-10-20 15:47:56.186738"], ["updated_at", "2023-10-20 15:47:56.186738"]]
+  ↳ app/controllers/expenses_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/expenses_controller.rb:31:in `block in create'
+Redirected to http://127.0.0.1:3000/categories/1/expenses
+Completed 302 Found in 184ms (ActiveRecord: 10.6ms | Allocations: 13191)
+
+
+Started GET "/categories/1/expenses" for 127.0.0.1 at 2023-10-20 16:47:56 +0100
+Processing by ExpensesController#index as TURBO_STREAM
+  Parameters: {"category_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/index.html.erb within layouts/application
+  [1m[36mExpense Sum (1.1ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/models/category.rb:9:in `total_amount'
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2 ORDER BY "expenses"."created_at" DESC[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/views/expenses/index.html.erb:5
+  Rendered expenses/_expense.html.erb (Duration: 16.5ms | Allocations: 244)
+  Rendered expenses/index.html.erb within layouts/application (Duration: 56.5ms | Allocations: 2158)
+  Rendered home/_navbar.html.erb (Duration: 0.5ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 209.0ms | Allocations: 4659)
+Completed 200 OK in 267ms (Views: 210.1ms | ActiveRecord: 2.6ms | Allocations: 7248)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:48:00 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:1
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mExpense Sum (0.9ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/models/category.rb:9:in `total_amount'
+  Rendered home/index.html.erb within layouts/application (Duration: 15.9ms | Allocations: 2807)
+  Rendered home/_navbar.html.erb (Duration: 0.5ms | Allocations: 243)
+  Rendered layout layouts/application.html.erb (Duration: 151.3ms | Allocations: 5233)
+Completed 200 OK in 192ms (Views: 151.0ms | ActiveRecord: 1.9ms | Allocations: 5508)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-10-20 16:48:03 +0100
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 74ms (ActiveRecord: 0.4ms | Allocations: 2791)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:48:04 +0100
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 496)
+  Rendered home/_navbar.html.erb (Duration: 0.2ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 168.5ms | Allocations: 2727)
+Completed 200 OK in 217ms (Views: 170.5ms | ActiveRecord: 0.0ms | Allocations: 3004)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-10-20 16:48:07 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 23.1ms | Allocations: 715)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 138.6ms | Allocations: 2729)
+  Rendered home/_navbar.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 315.2ms | Allocations: 5034)
+Completed 200 OK in 404ms (Views: 349.2ms | ActiveRecord: 0.0ms | Allocations: 6246)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-10-20 16:48:18 +0100
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"olanikegloria2020@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "olanikegloria2020@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 666ms (ActiveRecord: 0.6ms | Allocations: 9853)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:48:20 +0100
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:1
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mExpense Sum (0.8ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/models/category.rb:9:in `total_amount'
+  Rendered home/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 2829)
+  Rendered home/_navbar.html.erb (Duration: 0.6ms | Allocations: 243)
+  Rendered layout layouts/application.html.erb (Duration: 207.0ms | Allocations: 5280)
+Completed 200 OK in 260ms (Views: 207.2ms | ActiveRecord: 1.6ms | Allocations: 5558)
+
+
+Started GET "/categories/1/expenses" for 127.0.0.1 at 2023-10-20 16:48:27 +0100
+Processing by ExpensesController#index as HTML
+  Parameters: {"category_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/index.html.erb within layouts/application
+  [1m[36mExpense Sum (0.8ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/models/category.rb:9:in `total_amount'
+  [1m[36mExpense Load (0.8ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2 ORDER BY "expenses"."created_at" DESC[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/views/expenses/index.html.erb:5
+  Rendered expenses/_expense.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered expenses/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 1715)
+  Rendered home/_navbar.html.erb (Duration: 0.5ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 180.1ms | Allocations: 4210)
+Completed 200 OK in 234ms (Views: 180.6ms | ActiveRecord: 2.9ms | Allocations: 6793)
+
+
+Started GET "/categories/1/expenses/1" for 127.0.0.1 at 2023-10-20 16:48:32 +0100
+Processing by ExpensesController#show as HTML
+  Parameters: {"category_id"=>"1", "id"=>"1"}
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:69:in `set_expense'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:70:in `set_expense'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/show.html.erb within layouts/application
+  Rendered expenses/_expense.html.erb (Duration: 0.3ms | Allocations: 61)
+  Rendered expenses/show.html.erb within layouts/application (Duration: 18.8ms | Allocations: 692)
+  Rendered home/_navbar.html.erb (Duration: 0.7ms | Allocations: 330)
+  Rendered layout layouts/application.html.erb (Duration: 175.9ms | Allocations: 3188)
+Completed 200 OK in 249ms (Views: 177.8ms | ActiveRecord: 1.5ms | Allocations: 6611)
+
+
+Started GET "/categories/1/expenses" for 127.0.0.1 at 2023-10-20 16:48:42 +0100
+Processing by ExpensesController#index as HTML
+  Parameters: {"category_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/index.html.erb within layouts/application
+  [1m[36mExpense Sum (0.5ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/models/category.rb:9:in `total_amount'
+  [1m[36mExpense Load (1.0ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2 ORDER BY "expenses"."created_at" DESC[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/views/expenses/index.html.erb:5
+  Rendered expenses/_expense.html.erb (Duration: 0.3ms | Allocations: 61)
+  Rendered expenses/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1715)
+  Rendered home/_navbar.html.erb (Duration: 0.6ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 169.5ms | Allocations: 4210)
+Completed 200 OK in 221ms (Views: 169.8ms | ActiveRecord: 2.3ms | Allocations: 6810)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:48:45 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:1
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mExpense Sum (1.0ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/models/category.rb:9:in `total_amount'
+  Rendered home/index.html.erb within layouts/application (Duration: 23.6ms | Allocations: 2821)
+  Rendered home/_navbar.html.erb (Duration: 0.6ms | Allocations: 243)
+  Rendered layout layouts/application.html.erb (Duration: 201.7ms | Allocations: 5247)
+Completed 200 OK in 270ms (Views: 201.9ms | ActiveRecord: 3.0ms | Allocations: 5521)
+
+
+Started GET "/categories/1/expenses" for 127.0.0.1 at 2023-10-20 16:48:49 +0100
+Processing by ExpensesController#index as HTML
+  Parameters: {"category_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/index.html.erb within layouts/application
+  [1m[36mExpense Sum (0.6ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/models/category.rb:9:in `total_amount'
+  [1m[36mExpense Load (0.7ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2 ORDER BY "expenses"."created_at" DESC[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/views/expenses/index.html.erb:5
+  Rendered expenses/_expense.html.erb (Duration: 1.6ms | Allocations: 61)
+  Rendered expenses/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 1715)
+  Rendered home/_navbar.html.erb (Duration: 0.6ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 183.4ms | Allocations: 4210)
+Completed 200 OK in 238ms (Views: 183.8ms | ActiveRecord: 2.1ms | Allocations: 6794)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:48:54 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:1
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mExpense Sum (0.6ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/models/category.rb:9:in `total_amount'
+  Rendered home/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 2809)
+  Rendered home/_navbar.html.erb (Duration: 0.7ms | Allocations: 243)
+  Rendered layout layouts/application.html.erb (Duration: 194.6ms | Allocations: 5234)
+Completed 200 OK in 250ms (Views: 194.6ms | ActiveRecord: 1.9ms | Allocations: 5508)
+
+
+Started GET "/categories/1/expenses" for 127.0.0.1 at 2023-10-20 16:49:41 +0100
+Processing by ExpensesController#index as HTML
+  Parameters: {"category_id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/index.html.erb within layouts/application
+  [1m[36mExpense Sum (0.9ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/models/category.rb:9:in `total_amount'
+  [1m[36mExpense Load (0.8ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2 ORDER BY "expenses"."created_at" DESC[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/views/expenses/index.html.erb:5
+  Rendered expenses/_expense.html.erb (Duration: 21.9ms | Allocations: 290)
+  Rendered expenses/index.html.erb within layouts/application (Duration: 176.6ms | Allocations: 6482)
+  Rendered home/_navbar.html.erb (Duration: 0.9ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 437.0ms | Allocations: 9116)
+Completed 200 OK in 848ms (Views: 450.7ms | ActiveRecord: 19.7ms | Allocations: 25486)
+
+
+Started GET "/categories/1/expenses/1" for 127.0.0.1 at 2023-10-20 16:49:46 +0100
+Processing by ExpensesController#show as HTML
+  Parameters: {"category_id"=>"1", "id"=>"1"}
+  [1m[36mExpense Load (0.7ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:69:in `set_expense'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:70:in `set_expense'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/show.html.erb within layouts/application
+  Rendered expenses/_expense.html.erb (Duration: 0.3ms | Allocations: 61)
+  Rendered expenses/show.html.erb within layouts/application (Duration: 23.5ms | Allocations: 694)
+  Rendered home/_navbar.html.erb (Duration: 0.6ms | Allocations: 330)
+  Rendered layout layouts/application.html.erb (Duration: 233.1ms | Allocations: 3190)
+Completed 200 OK in 338ms (Views: 235.4ms | ActiveRecord: 1.9ms | Allocations: 6610)
+
+
+Started GET "/categories/1/expenses/1/edit" for 127.0.0.1 at 2023-10-20 16:49:53 +0100
+Processing by ExpensesController#edit as HTML
+  Parameters: {"category_id"=>"1", "id"=>"1"}
+  [1m[36mExpense Load (0.7ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:69:in `set_expense'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:70:in `set_expense'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/edit.html.erb within layouts/application
+  Rendered expenses/_form.html.erb (Duration: 31.0ms | Allocations: 1428)
+  Rendered expenses/edit.html.erb within layouts/application (Duration: 64.0ms | Allocations: 1777)
+  Rendered home/_navbar.html.erb (Duration: 0.8ms | Allocations: 330)
+  Rendered layout layouts/application.html.erb (Duration: 222.7ms | Allocations: 4281)
+Completed 200 OK in 298ms (Views: 225.1ms | ActiveRecord: 1.7ms | Allocations: 7080)
+
+
+Started GET "/categories/1/expenses" for 127.0.0.1 at 2023-10-20 16:50:02 +0100
+Processing by ExpensesController#index as HTML
+  Parameters: {"category_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/index.html.erb within layouts/application
+  [1m[36mExpense Sum (0.9ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/models/category.rb:9:in `total_amount'
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2 ORDER BY "expenses"."created_at" DESC[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/views/expenses/index.html.erb:5
+  Rendered expenses/_expense.html.erb (Duration: 0.3ms | Allocations: 61)
+  Rendered expenses/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1715)
+  Rendered home/_navbar.html.erb (Duration: 0.6ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 201.6ms | Allocations: 4210)
+Completed 200 OK in 272ms (Views: 202.2ms | ActiveRecord: 2.5ms | Allocations: 6811)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:50:31 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:1
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mExpense Sum (1.0ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 1], ["author_id", 1]]
+  ↳ app/models/category.rb:9:in `total_amount'
+  Rendered home/index.html.erb within layouts/application (Duration: 12.9ms | Allocations: 2846)
+  Rendered home/_navbar.html.erb (Duration: 0.5ms | Allocations: 262)
+  Rendered layout layouts/application.html.erb (Duration: 195.4ms | Allocations: 5310)
+Completed 200 OK in 246ms (Views: 195.2ms | ActiveRecord: 2.1ms | Allocations: 5591)
+
+
