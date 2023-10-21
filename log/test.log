@@ -1,0 +1,1272 @@
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:17:57.073953"], ["updated_at", "2023-10-20 15:17:57.073953"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:17:57.298717"], ["updated_at", "2023-10-20 15:17:57.298717"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2023-10-20 15:17:57.078317"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.9ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:17:57.499633"], ["updated_at", "2023-10-20 15:17:57.499633"], ["author_id", 16]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:17:57.505362"], ["updated_at", "2023-10-20 15:17:57.505362"], ["author_id", 16]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:17:57.510307"], ["updated_at", "2023-10-20 15:17:57.510307"], ["author_id", 16]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (1.1ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 12], ["expense_id", 38], ["created_at", "2023-10-20 15:17:57.605078"], ["updated_at", "2023-10-20 15:17:57.605078"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (1.3ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 12], ["expense_id", 39], ["created_at", "2023-10-20 15:17:57.614662"], ["updated_at", "2023-10-20 15:17:57.614662"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 12], ["expense_id", 40], ["created_at", "2023-10-20 15:17:57.622940"], ["updated_at", "2023-10-20 15:17:57.622940"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 AND "categories"."id" != $2 LIMIT $3[0m  [["name", "Utilities"], ["id", 12], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:17:58.278331"], ["updated_at", "2023-10-20 15:17:58.278331"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:17:58.287413"], ["updated_at", "2023-10-20 15:17:58.287413"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2023-10-20 15:17:58.282172"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:17:58.294288"], ["updated_at", "2023-10-20 15:17:58.294288"], ["author_id", 17]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:17:58.301270"], ["updated_at", "2023-10-20 15:17:58.301270"], ["author_id", 17]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.8ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:17:58.307881"], ["updated_at", "2023-10-20 15:17:58.307881"], ["author_id", 17]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.7ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 13], ["expense_id", 41], ["created_at", "2023-10-20 15:17:58.316396"], ["updated_at", "2023-10-20 15:17:58.316396"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.6ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.9ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 13], ["expense_id", 42], ["created_at", "2023-10-20 15:17:58.325555"], ["updated_at", "2023-10-20 15:17:58.325555"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 13], ["expense_id", 43], ["created_at", "2023-10-20 15:17:58.333488"], ["updated_at", "2023-10-20 15:17:58.333488"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" IS NULL AND "categories"."id" != $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:17:58.344232"], ["updated_at", "2023-10-20 15:17:58.344232"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:17:58.350779"], ["updated_at", "2023-10-20 15:17:58.350779"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2023-10-20 15:17:58.346737"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:17:58.356428"], ["updated_at", "2023-10-20 15:17:58.356428"], ["author_id", 18]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:17:58.361775"], ["updated_at", "2023-10-20 15:17:58.361775"], ["author_id", 18]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:17:58.367156"], ["updated_at", "2023-10-20 15:17:58.367156"], ["author_id", 18]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.6ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 14], ["expense_id", 44], ["created_at", "2023-10-20 15:17:58.374774"], ["updated_at", "2023-10-20 15:17:58.374774"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.8ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 14], ["expense_id", 45], ["created_at", "2023-10-20 15:17:58.382241"], ["updated_at", "2023-10-20 15:17:58.382241"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 14], ["expense_id", 46], ["created_at", "2023-10-20 15:17:58.388575"], ["updated_at", "2023-10-20 15:17:58.388575"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 AND "categories"."id" != $2 LIMIT $3[0m  [["name", "Utilities"], ["id", 14], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:17:58.399189"], ["updated_at", "2023-10-20 15:17:58.399189"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:17:58.406541"], ["updated_at", "2023-10-20 15:17:58.406541"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2023-10-20 15:17:58.402394"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.3ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:17:58.412016"], ["updated_at", "2023-10-20 15:17:58.412016"], ["author_id", 19]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:17:58.417751"], ["updated_at", "2023-10-20 15:17:58.417751"], ["author_id", 19]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:17:58.425113"], ["updated_at", "2023-10-20 15:17:58.425113"], ["author_id", 19]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 15], ["expense_id", 47], ["created_at", "2023-10-20 15:17:58.431402"], ["updated_at", "2023-10-20 15:17:58.431402"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 15], ["expense_id", 48], ["created_at", "2023-10-20 15:17:58.438403"], ["updated_at", "2023-10-20 15:17:58.438403"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 15], ["expense_id", 49], ["created_at", "2023-10-20 15:17:58.444262"], ["updated_at", "2023-10-20 15:17:58.444262"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mExpense Sum (1.5ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 15], ["author_id", 19]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:17:58.901980"], ["updated_at", "2023-10-20 15:17:58.901980"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2023-10-20 15:17:58.897647"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:17:58.909127"], ["updated_at", "2023-10-20 15:17:58.909127"], ["author_id", 20]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:17:58.921119"], ["updated_at", "2023-10-20 15:17:58.921119"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2023-10-20 15:17:58.916026"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:17:58.927507"], ["updated_at", "2023-10-20 15:17:58.927507"], ["author_id", 21]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:17:58.938837"], ["updated_at", "2023-10-20 15:17:58.938837"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2023-10-20 15:17:58.934524"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:17:58.944627"], ["updated_at", "2023-10-20 15:17:58.944627"], ["author_id", 22]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:17:58.955193"], ["updated_at", "2023-10-20 15:17:58.955193"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2023-10-20 15:17:58.950431"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:17:58.961873"], ["updated_at", "2023-10-20 15:17:58.961873"], ["author_id", 23]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:17:58.993155"], ["updated_at", "2023-10-20 15:17:58.993155"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:17:59.001039"], ["updated_at", "2023-10-20 15:17:59.001039"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2023-10-20 15:17:58.996257"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:17:59.006915"], ["updated_at", "2023-10-20 15:17:59.006915"], ["author_id", 24]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:17:59.013374"], ["updated_at", "2023-10-20 15:17:59.013374"], ["author_id", 24]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:17:59.020092"], ["updated_at", "2023-10-20 15:17:59.020092"], ["author_id", 24]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.7ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 16], ["expense_id", 54], ["created_at", "2023-10-20 15:17:59.027666"], ["updated_at", "2023-10-20 15:17:59.027666"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 16], ["expense_id", 55], ["created_at", "2023-10-20 15:17:59.036006"], ["updated_at", "2023-10-20 15:17:59.036006"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 16], ["expense_id", 56], ["created_at", "2023-10-20 15:17:59.043047"], ["updated_at", "2023-10-20 15:17:59.043047"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/categories/16/expenses" for 127.0.0.1 at 2023-10-20 16:17:59 +0100
+Processing by ExpensesController#index as HTML
+  Parameters: {"category_id"=>"16"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/index.html.erb within layouts/application
+  [1m[36mExpense Sum (1.2ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 16], ["author_id", 24]]
+  [1m[36mExpense Load (0.6ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2 ORDER BY "expenses"."created_at" DESC[0m  [["category_id", 16], ["author_id", 24]]
+  Rendered expenses/_expense.html.erb (Duration: 15.1ms | Allocations: 358)
+  Rendered expenses/_expense.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered expenses/_expense.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered expenses/index.html.erb within layouts/application (Duration: 122.0ms | Allocations: 2248)
+  Rendered home/_navbar.html.erb (Duration: 15.7ms | Allocations: 614)
+  Rendered layout layouts/application.html.erb (Duration: 3561.3ms | Allocations: 90866)
+Completed 200 OK in 4605ms (Views: 3706.7ms | ActiveRecord: 2.2ms | Allocations: 100921)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:18:04.436039"], ["updated_at", "2023-10-20 15:18:04.436039"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:18:04.443933"], ["updated_at", "2023-10-20 15:18:04.443933"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2023-10-20 15:18:04.438800"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:18:04.450153"], ["updated_at", "2023-10-20 15:18:04.450153"], ["author_id", 25]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:18:04.455964"], ["updated_at", "2023-10-20 15:18:04.455964"], ["author_id", 25]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:18:04.462736"], ["updated_at", "2023-10-20 15:18:04.462736"], ["author_id", 25]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (1.0ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 17], ["expense_id", 57], ["created_at", "2023-10-20 15:18:04.471854"], ["updated_at", "2023-10-20 15:18:04.471854"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 17], ["expense_id", 58], ["created_at", "2023-10-20 15:18:04.479277"], ["updated_at", "2023-10-20 15:18:04.479277"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 59], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 17], ["expense_id", 59], ["created_at", "2023-10-20 15:18:04.485537"], ["updated_at", "2023-10-20 15:18:04.485537"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/categories/17/expenses" for 127.0.0.1 at 2023-10-20 16:18:04 +0100
+Processing by ExpensesController#index as HTML
+  Parameters: {"category_id"=>"17"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/index.html.erb within layouts/application
+  [1m[36mExpense Sum (0.6ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 17], ["author_id", 25]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2 ORDER BY "expenses"."created_at" DESC[0m  [["category_id", 17], ["author_id", 25]]
+  Rendered expenses/_expense.html.erb (Duration: 0.4ms | Allocations: 53)
+  Rendered expenses/_expense.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered expenses/_expense.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered expenses/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 946)
+  Rendered home/_navbar.html.erb (Duration: 0.7ms | Allocations: 226)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 2527)
+Completed 200 OK in 18ms (Views: 13.8ms | ActiveRecord: 1.6ms | Allocations: 3213)
+  [1m[36mExpense Sum (0.9ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 17], ["author_id", 25]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (1.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:18:04.550402"], ["updated_at", "2023-10-20 15:18:04.550402"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:18:04.560613"], ["updated_at", "2023-10-20 15:18:04.560613"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2023-10-20 15:18:04.554785"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.8ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:18:04.570261"], ["updated_at", "2023-10-20 15:18:04.570261"], ["author_id", 26]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:18:04.578587"], ["updated_at", "2023-10-20 15:18:04.578587"], ["author_id", 26]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:18:04.586577"], ["updated_at", "2023-10-20 15:18:04.586577"], ["author_id", 26]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (1.1ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 18], ["expense_id", 60], ["created_at", "2023-10-20 15:18:04.597774"], ["updated_at", "2023-10-20 15:18:04.597774"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 18], ["expense_id", 61], ["created_at", "2023-10-20 15:18:04.609013"], ["updated_at", "2023-10-20 15:18:04.609013"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.7ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.8ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 18], ["expense_id", 62], ["created_at", "2023-10-20 15:18:04.619959"], ["updated_at", "2023-10-20 15:18:04.619959"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/categories/18/expenses" for 127.0.0.1 at 2023-10-20 16:18:04 +0100
+Processing by ExpensesController#index as HTML
+  Parameters: {"category_id"=>"18"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/index.html.erb within layouts/application
+  [1m[36mExpense Sum (0.7ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 18], ["author_id", 26]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2 ORDER BY "expenses"."created_at" DESC[0m  [["category_id", 18], ["author_id", 26]]
+  Rendered expenses/_expense.html.erb (Duration: 0.3ms | Allocations: 53)
+  Rendered expenses/_expense.html.erb (Duration: 0.3ms | Allocations: 47)
+  Rendered expenses/_expense.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered expenses/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 946)
+  Rendered home/_navbar.html.erb (Duration: 0.3ms | Allocations: 226)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 2527)
+Completed 200 OK in 18ms (Views: 12.4ms | ActiveRecord: 2.0ms | Allocations: 3212)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:18:04.681656"], ["updated_at", "2023-10-20 15:18:04.681656"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:18:04.692193"], ["updated_at", "2023-10-20 15:18:04.692193"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2023-10-20 15:18:04.685455"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:18:04.699801"], ["updated_at", "2023-10-20 15:18:04.699801"], ["author_id", 27]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:18:04.707182"], ["updated_at", "2023-10-20 15:18:04.707182"], ["author_id", 27]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:18:04.714585"], ["updated_at", "2023-10-20 15:18:04.714585"], ["author_id", 27]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 19], ["expense_id", 63], ["created_at", "2023-10-20 15:18:04.722532"], ["updated_at", "2023-10-20 15:18:04.722532"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 19], ["expense_id", 64], ["created_at", "2023-10-20 15:18:04.730097"], ["updated_at", "2023-10-20 15:18:04.730097"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (1.0ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 19], ["expense_id", 65], ["created_at", "2023-10-20 15:18:04.737507"], ["updated_at", "2023-10-20 15:18:04.737507"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:18:04 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 680)
+  Rendered home/_navbar.html.erb (Duration: 0.2ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 2152)
+Completed 200 OK in 37ms (Views: 28.0ms | ActiveRecord: 0.0ms | Allocations: 2812)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:18:04.887599"], ["updated_at", "2023-10-20 15:18:04.887599"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:18:04.898355"], ["updated_at", "2023-10-20 15:18:04.898355"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2023-10-20 15:18:04.893288"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:18:04.910437"], ["updated_at", "2023-10-20 15:18:04.910437"], ["author_id", 28]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.9ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:18:04.923767"], ["updated_at", "2023-10-20 15:18:04.923767"], ["author_id", 28]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:18:04.935450"], ["updated_at", "2023-10-20 15:18:04.935450"], ["author_id", 28]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 20], ["expense_id", 66], ["created_at", "2023-10-20 15:18:04.946473"], ["updated_at", "2023-10-20 15:18:04.946473"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 67], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 20], ["expense_id", 67], ["created_at", "2023-10-20 15:18:04.958148"], ["updated_at", "2023-10-20 15:18:04.958148"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 20], ["expense_id", 68], ["created_at", "2023-10-20 15:18:04.966972"], ["updated_at", "2023-10-20 15:18:04.966972"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:18:04 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mExpense Sum (0.7ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 20], ["author_id", 28]]
+  Rendered home/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 864)
+  Rendered home/_navbar.html.erb (Duration: 0.4ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 2390)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 1.3ms | Allocations: 2605)
+  [1m[36mExpense Sum (1.3ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 20], ["author_id", 28]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:18:05.063120"], ["updated_at", "2023-10-20 15:18:05.063120"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:18:05.074787"], ["updated_at", "2023-10-20 15:18:05.074787"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2023-10-20 15:18:05.066595"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:18:05.080471"], ["updated_at", "2023-10-20 15:18:05.080471"], ["author_id", 29]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:18:05.085295"], ["updated_at", "2023-10-20 15:18:05.085295"], ["author_id", 29]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:18:05.091072"], ["updated_at", "2023-10-20 15:18:05.091072"], ["author_id", 29]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 21], ["expense_id", 69], ["created_at", "2023-10-20 15:18:05.098704"], ["updated_at", "2023-10-20 15:18:05.098704"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 21], ["expense_id", 70], ["created_at", "2023-10-20 15:18:05.105253"], ["updated_at", "2023-10-20 15:18:05.105253"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 21], ["expense_id", 71], ["created_at", "2023-10-20 15:18:05.112775"], ["updated_at", "2023-10-20 15:18:05.112775"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:18:05 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mExpense Sum (0.5ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 21], ["author_id", 29]]
+  Rendered home/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 826)
+  Rendered home/_navbar.html.erb (Duration: 0.2ms | Allocations: 148)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 2350)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.9ms | Allocations: 2566)
+Started GET "/categories/21/expenses" for 127.0.0.1 at 2023-10-20 16:18:05 +0100
+Processing by ExpensesController#index as HTML
+  Parameters: {"category_id"=>"21"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/index.html.erb within layouts/application
+  [1m[36mExpense Sum (0.6ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 21], ["author_id", 29]]
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2 ORDER BY "expenses"."created_at" DESC[0m  [["category_id", 21], ["author_id", 29]]
+  Rendered expenses/_expense.html.erb (Duration: 0.5ms | Allocations: 53)
+  Rendered expenses/_expense.html.erb (Duration: 0.4ms | Allocations: 47)
+  Rendered expenses/_expense.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered expenses/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 946)
+  Rendered home/_navbar.html.erb (Duration: 0.4ms | Allocations: 226)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 2531)
+Completed 200 OK in 25ms (Views: 12.8ms | ActiveRecord: 2.0ms | Allocations: 3792)
+  [1m[36mExpense Sum (0.6ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 21], ["author_id", 29]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:18:05.211412"], ["updated_at", "2023-10-20 15:18:05.211412"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:18:05.220450"], ["updated_at", "2023-10-20 15:18:05.220450"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2023-10-20 15:18:05.214791"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:18:05.228787"], ["updated_at", "2023-10-20 15:18:05.228787"], ["author_id", 30]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.3ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:18:05.235169"], ["updated_at", "2023-10-20 15:18:05.235169"], ["author_id", 30]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:18:05.241701"], ["updated_at", "2023-10-20 15:18:05.241701"], ["author_id", 30]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 22], ["expense_id", 72], ["created_at", "2023-10-20 15:18:05.251136"], ["updated_at", "2023-10-20 15:18:05.251136"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 22], ["expense_id", 73], ["created_at", "2023-10-20 15:18:05.259794"], ["updated_at", "2023-10-20 15:18:05.259794"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 74], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 22], ["expense_id", 74], ["created_at", "2023-10-20 15:18:05.269165"], ["updated_at", "2023-10-20 15:18:05.269165"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:18:05 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mExpense Sum (0.4ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 22], ["author_id", 30]]
+  Rendered home/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 826)
+  Rendered home/_navbar.html.erb (Duration: 0.6ms | Allocations: 148)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 2338)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.8ms | Allocations: 2553)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (41.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rails_capstone_app_test"[0m
+  [1m[35m (257.3ms)[0m  [1m[35mCREATE DATABASE "rails_capstone_app_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories" CASCADE[0m
+  [1m[35m (25.0ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "icon" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories_expenses" CASCADE[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "categories_expenses" ("expense_id" bigint NOT NULL, "category_id" bigint NOT NULL)[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE INDEX "index_categories_expenses_on_category_id" ON "categories_expenses" ("category_id")[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE INDEX "index_categories_expenses_on_expense_id" ON "categories_expenses" ("expense_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "category_expenses" CASCADE[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "category_expenses" ("id" bigserial primary key, "category_id" bigint NOT NULL, "expense_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE INDEX "index_category_expenses_on_category_id" ON "category_expenses" ("category_id")[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE INDEX "index_category_expenses_on_expense_id" ON "category_expenses" ("expense_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "expenses" CASCADE[0m
+  [1m[35m (18.9ms)[0m  [1m[35mCREATE TABLE "expenses" ("id" bigserial primary key, "name" character varying, "amount" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "author_id" bigint NOT NULL)[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE INDEX "index_expenses_on_author_id" ON "expenses" ("author_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (19.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6))[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (5.4ms)[0m  [1m[35mALTER TABLE "category_expenses" ADD CONSTRAINT "fk_rails_e86a321b58"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+[0m
+  [1m[35m (4.4ms)[0m  [1m[35mALTER TABLE "category_expenses" ADD CONSTRAINT "fk_rails_f3e3cad7b7"
+FOREIGN KEY ("expense_id")
+  REFERENCES "expenses" ("id")
+[0m
+  [1m[35m (4.5ms)[0m  [1m[35mALTER TABLE "expenses" ADD CONSTRAINT "fk_rails_896acdaedb"
+FOREIGN KEY ("author_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231020153509)[0m
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231014130051),
+(20231014162419),
+(20231014171344),
+(20231014173650),
+(20231014175027),
+(20231015101754);
+
+[0m
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-10-20 15:51:26.117221"], ["updated_at", "2023-10-20 15:51:26.117221"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "7fac840ea43132cbf1796caba52dd39b1052c788"], ["created_at", "2023-10-20 15:51:26.130709"], ["updated_at", "2023-10-20 15:51:26.130709"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:51:26.605860"], ["updated_at", "2023-10-20 15:51:26.605860"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:51:26.797012"], ["updated_at", "2023-10-20 15:51:26.797012"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:51:26.804383"], ["updated_at", "2023-10-20 15:51:26.804383"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:51:26.811968"], ["updated_at", "2023-10-20 15:51:26.811968"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:51:26.863047"], ["updated_at", "2023-10-20 15:51:26.863047"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:51:26.875692"], ["updated_at", "2023-10-20 15:51:26.875692"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:51:26.888089"], ["updated_at", "2023-10-20 15:51:26.888089"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:51:26.902858"], ["updated_at", "2023-10-20 15:51:26.902858"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:51:26.915258"], ["updated_at", "2023-10-20 15:51:26.915258"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:51:26.926978"], ["updated_at", "2023-10-20 15:51:26.926978"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:51:26.940014"], ["updated_at", "2023-10-20 15:51:26.940014"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:55:09.577838"], ["updated_at", "2023-10-20 15:55:09.577838"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:55:09.670967"], ["updated_at", "2023-10-20 15:55:09.670967"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.9ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:55:09.762131"], ["updated_at", "2023-10-20 15:55:09.762131"], ["author_id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:55:09.768136"], ["updated_at", "2023-10-20 15:55:09.768136"], ["author_id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:55:09.773728"], ["updated_at", "2023-10-20 15:55:09.773728"], ["author_id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (1.6ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 12], ["expense_id", 1], ["created_at", "2023-10-20 15:55:09.847690"], ["updated_at", "2023-10-20 15:55:09.847690"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.6ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.8ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 12], ["expense_id", 2], ["created_at", "2023-10-20 15:55:09.858327"], ["updated_at", "2023-10-20 15:55:09.858327"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.8ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 12], ["expense_id", 3], ["created_at", "2023-10-20 15:55:09.867922"], ["updated_at", "2023-10-20 15:55:09.867922"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 AND "categories"."id" != $2 LIMIT $3[0m  [["name", "Utilities"], ["id", 12], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:55:10.083678"], ["updated_at", "2023-10-20 15:55:10.083678"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:55:10.091705"], ["updated_at", "2023-10-20 15:55:10.091705"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:55:10.097849"], ["updated_at", "2023-10-20 15:55:10.097849"], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:55:10.105298"], ["updated_at", "2023-10-20 15:55:10.105298"], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:55:10.112426"], ["updated_at", "2023-10-20 15:55:10.112426"], ["author_id", 2]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.6ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 13], ["expense_id", 4], ["created_at", "2023-10-20 15:55:10.122264"], ["updated_at", "2023-10-20 15:55:10.122264"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 13], ["expense_id", 5], ["created_at", "2023-10-20 15:55:10.130640"], ["updated_at", "2023-10-20 15:55:10.130640"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 13], ["expense_id", 6], ["created_at", "2023-10-20 15:55:10.138384"], ["updated_at", "2023-10-20 15:55:10.138384"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" IS NULL AND "categories"."id" != $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:55:10.148752"], ["updated_at", "2023-10-20 15:55:10.148752"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:55:10.155557"], ["updated_at", "2023-10-20 15:55:10.155557"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:55:10.161021"], ["updated_at", "2023-10-20 15:55:10.161021"], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:55:10.166206"], ["updated_at", "2023-10-20 15:55:10.166206"], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:55:10.171090"], ["updated_at", "2023-10-20 15:55:10.171090"], ["author_id", 3]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 14], ["expense_id", 7], ["created_at", "2023-10-20 15:55:10.177401"], ["updated_at", "2023-10-20 15:55:10.177401"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 14], ["expense_id", 8], ["created_at", "2023-10-20 15:55:10.182937"], ["updated_at", "2023-10-20 15:55:10.182937"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 14], ["expense_id", 9], ["created_at", "2023-10-20 15:55:10.189020"], ["updated_at", "2023-10-20 15:55:10.189020"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 AND "categories"."id" != $2 LIMIT $3[0m  [["name", "Utilities"], ["id", 14], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:55:10.198148"], ["updated_at", "2023-10-20 15:55:10.198148"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:55:10.204444"], ["updated_at", "2023-10-20 15:55:10.204444"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:55:10.210109"], ["updated_at", "2023-10-20 15:55:10.210109"], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:55:10.216213"], ["updated_at", "2023-10-20 15:55:10.216213"], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:55:10.221159"], ["updated_at", "2023-10-20 15:55:10.221159"], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.7ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.9ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 15], ["expense_id", 10], ["created_at", "2023-10-20 15:55:10.229724"], ["updated_at", "2023-10-20 15:55:10.229724"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 15], ["expense_id", 11], ["created_at", "2023-10-20 15:55:10.241283"], ["updated_at", "2023-10-20 15:55:10.241283"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 15], ["expense_id", 12], ["created_at", "2023-10-20 15:55:10.249513"], ["updated_at", "2023-10-20 15:55:10.249513"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mExpense Sum (1.6ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 15], ["author_id", 4]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:55:10.412503"], ["updated_at", "2023-10-20 15:55:10.412503"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:55:10.419587"], ["updated_at", "2023-10-20 15:55:10.419587"], ["author_id", 5]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:55:10.430204"], ["updated_at", "2023-10-20 15:55:10.430204"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:55:10.435928"], ["updated_at", "2023-10-20 15:55:10.435928"], ["author_id", 6]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:55:10.445960"], ["updated_at", "2023-10-20 15:55:10.445960"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:55:10.451166"], ["updated_at", "2023-10-20 15:55:10.451166"], ["author_id", 7]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:55:10.464523"], ["updated_at", "2023-10-20 15:55:10.464523"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:55:10.471933"], ["updated_at", "2023-10-20 15:55:10.471933"], ["author_id", 8]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:55:10.511418"], ["updated_at", "2023-10-20 15:55:10.511418"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:55:10.519583"], ["updated_at", "2023-10-20 15:55:10.519583"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:55:10.526720"], ["updated_at", "2023-10-20 15:55:10.526720"], ["author_id", 9]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:55:10.532864"], ["updated_at", "2023-10-20 15:55:10.532864"], ["author_id", 9]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:55:10.539229"], ["updated_at", "2023-10-20 15:55:10.539229"], ["author_id", 9]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 16], ["expense_id", 17], ["created_at", "2023-10-20 15:55:10.547003"], ["updated_at", "2023-10-20 15:55:10.547003"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.7ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 16], ["expense_id", 18], ["created_at", "2023-10-20 15:55:10.555161"], ["updated_at", "2023-10-20 15:55:10.555161"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 16], ["expense_id", 19], ["created_at", "2023-10-20 15:55:10.563145"], ["updated_at", "2023-10-20 15:55:10.563145"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/categories/16/expenses" for 127.0.0.1 at 2023-10-20 16:55:10 +0100
+Processing by ExpensesController#index as HTML
+  Parameters: {"category_id"=>"16"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/index.html.erb within layouts/application
+  [1m[36mExpense Sum (0.7ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 16], ["author_id", 9]]
+  [1m[36mExpense Load (0.6ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2 ORDER BY "expenses"."created_at" DESC[0m  [["category_id", 16], ["author_id", 9]]
+  Rendered expenses/_expense.html.erb (Duration: 13.3ms | Allocations: 358)
+  Rendered expenses/_expense.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered expenses/_expense.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered expenses/index.html.erb within layouts/application (Duration: 84.7ms | Allocations: 2014)
+  Rendered home/_navbar.html.erb (Duration: 20.3ms | Allocations: 612)
+  Rendered layout layouts/application.html.erb (Duration: 1809.6ms | Allocations: 34988)
+Completed 200 OK in 2082ms (Views: 1857.4ms | ActiveRecord: 1.7ms | Allocations: 40750)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:55:13.081186"], ["updated_at", "2023-10-20 15:55:13.081186"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:55:13.088832"], ["updated_at", "2023-10-20 15:55:13.088832"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:55:13.095677"], ["updated_at", "2023-10-20 15:55:13.095677"], ["author_id", 10]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:55:13.102571"], ["updated_at", "2023-10-20 15:55:13.102571"], ["author_id", 10]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.8ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:55:13.108914"], ["updated_at", "2023-10-20 15:55:13.108914"], ["author_id", 10]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 17], ["expense_id", 20], ["created_at", "2023-10-20 15:55:13.117678"], ["updated_at", "2023-10-20 15:55:13.117678"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.9ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 17], ["expense_id", 21], ["created_at", "2023-10-20 15:55:13.126343"], ["updated_at", "2023-10-20 15:55:13.126343"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 17], ["expense_id", 22], ["created_at", "2023-10-20 15:55:13.136627"], ["updated_at", "2023-10-20 15:55:13.136627"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/categories/17/expenses" for 127.0.0.1 at 2023-10-20 16:55:13 +0100
+Processing by ExpensesController#index as HTML
+  Parameters: {"category_id"=>"17"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/index.html.erb within layouts/application
+  [1m[36mExpense Sum (0.8ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 17], ["author_id", 10]]
+  [1m[36mExpense Load (0.6ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2 ORDER BY "expenses"."created_at" DESC[0m  [["category_id", 17], ["author_id", 10]]
+  Rendered expenses/_expense.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered expenses/_expense.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered expenses/_expense.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered expenses/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 946)
+  Rendered home/_navbar.html.erb (Duration: 0.4ms | Allocations: 226)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 2527)
+Completed 200 OK in 17ms (Views: 12.5ms | ActiveRecord: 1.9ms | Allocations: 3213)
+  [1m[36mExpense Sum (0.9ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 17], ["author_id", 10]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:55:13.198497"], ["updated_at", "2023-10-20 15:55:13.198497"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:55:13.206364"], ["updated_at", "2023-10-20 15:55:13.206364"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:55:13.212248"], ["updated_at", "2023-10-20 15:55:13.212248"], ["author_id", 11]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:55:13.217602"], ["updated_at", "2023-10-20 15:55:13.217602"], ["author_id", 11]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:55:13.222762"], ["updated_at", "2023-10-20 15:55:13.222762"], ["author_id", 11]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 18], ["expense_id", 23], ["created_at", "2023-10-20 15:55:13.228827"], ["updated_at", "2023-10-20 15:55:13.228827"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.4ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 18], ["expense_id", 24], ["created_at", "2023-10-20 15:55:13.235376"], ["updated_at", "2023-10-20 15:55:13.235376"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 18], ["expense_id", 25], ["created_at", "2023-10-20 15:55:13.242062"], ["updated_at", "2023-10-20 15:55:13.242062"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/categories/18/expenses" for 127.0.0.1 at 2023-10-20 16:55:13 +0100
+Processing by ExpensesController#index as HTML
+  Parameters: {"category_id"=>"18"}
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/index.html.erb within layouts/application
+  [1m[36mExpense Sum (0.8ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 18], ["author_id", 11]]
+  [1m[36mExpense Load (0.9ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2 ORDER BY "expenses"."created_at" DESC[0m  [["category_id", 18], ["author_id", 11]]
+  Rendered expenses/_expense.html.erb (Duration: 0.4ms | Allocations: 53)
+  Rendered expenses/_expense.html.erb (Duration: 0.4ms | Allocations: 47)
+  Rendered expenses/_expense.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered expenses/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 946)
+  Rendered home/_navbar.html.erb (Duration: 0.3ms | Allocations: 226)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 2527)
+Completed 200 OK in 18ms (Views: 12.1ms | ActiveRecord: 2.4ms | Allocations: 3212)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:55:13.296092"], ["updated_at", "2023-10-20 15:55:13.296092"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:55:13.303910"], ["updated_at", "2023-10-20 15:55:13.303910"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mExpense Create (1.0ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:55:13.310018"], ["updated_at", "2023-10-20 15:55:13.310018"], ["author_id", 12]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:55:13.315397"], ["updated_at", "2023-10-20 15:55:13.315397"], ["author_id", 12]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.6ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:55:13.320485"], ["updated_at", "2023-10-20 15:55:13.320485"], ["author_id", 12]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.5ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 19], ["expense_id", 26], ["created_at", "2023-10-20 15:55:13.328008"], ["updated_at", "2023-10-20 15:55:13.328008"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.6ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.9ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 19], ["expense_id", 27], ["created_at", "2023-10-20 15:55:13.337079"], ["updated_at", "2023-10-20 15:55:13.337079"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 19], ["expense_id", 28], ["created_at", "2023-10-20 15:55:13.347257"], ["updated_at", "2023-10-20 15:55:13.347257"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:55:13 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 19.1ms | Allocations: 680)
+  Rendered home/_navbar.html.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 2152)
+Completed 200 OK in 60ms (Views: 38.0ms | ActiveRecord: 0.0ms | Allocations: 2813)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:55:13.507876"], ["updated_at", "2023-10-20 15:55:13.507876"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:55:13.516030"], ["updated_at", "2023-10-20 15:55:13.516030"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:55:13.522075"], ["updated_at", "2023-10-20 15:55:13.522075"], ["author_id", 13]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.9ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:55:13.528598"], ["updated_at", "2023-10-20 15:55:13.528598"], ["author_id", 13]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.8ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:55:13.536755"], ["updated_at", "2023-10-20 15:55:13.536755"], ["author_id", 13]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.9ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 20], ["expense_id", 29], ["created_at", "2023-10-20 15:55:13.546158"], ["updated_at", "2023-10-20 15:55:13.546158"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.9ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 20], ["expense_id", 30], ["created_at", "2023-10-20 15:55:13.556255"], ["updated_at", "2023-10-20 15:55:13.556255"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 20], ["expense_id", 31], ["created_at", "2023-10-20 15:55:13.566173"], ["updated_at", "2023-10-20 15:55:13.566173"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:55:13 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mExpense Sum (0.9ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 20], ["author_id", 13]]
+  Rendered home/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 864)
+  Rendered home/_navbar.html.erb (Duration: 0.2ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 2391)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 1.6ms | Allocations: 2606)
+  [1m[36mExpense Sum (2.4ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 20], ["author_id", 13]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (1.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:55:13.652873"], ["updated_at", "2023-10-20 15:55:13.652873"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:55:13.675671"], ["updated_at", "2023-10-20 15:55:13.675671"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.9ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:55:13.688264"], ["updated_at", "2023-10-20 15:55:13.688264"], ["author_id", 14]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:55:13.699689"], ["updated_at", "2023-10-20 15:55:13.699689"], ["author_id", 14]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.8ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:55:13.711007"], ["updated_at", "2023-10-20 15:55:13.711007"], ["author_id", 14]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (1.1ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 21], ["expense_id", 32], ["created_at", "2023-10-20 15:55:13.726612"], ["updated_at", "2023-10-20 15:55:13.726612"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.8ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 21], ["expense_id", 33], ["created_at", "2023-10-20 15:55:13.739498"], ["updated_at", "2023-10-20 15:55:13.739498"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.8ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 21], ["expense_id", 34], ["created_at", "2023-10-20 15:55:13.753936"], ["updated_at", "2023-10-20 15:55:13.753936"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:55:13 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mExpense Sum (0.7ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 21], ["author_id", 14]]
+  Rendered home/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 826)
+  Rendered home/_navbar.html.erb (Duration: 0.8ms | Allocations: 148)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 2337)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 1.4ms | Allocations: 2552)
+Started GET "/categories/21/expenses" for 127.0.0.1 at 2023-10-20 16:55:13 +0100
+Processing by ExpensesController#index as HTML
+  Parameters: {"category_id"=>"21"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/index.html.erb within layouts/application
+  [1m[36mExpense Sum (0.6ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 21], ["author_id", 14]]
+  [1m[36mExpense Load (1.0ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2 ORDER BY "expenses"."created_at" DESC[0m  [["category_id", 21], ["author_id", 14]]
+  Rendered expenses/_expense.html.erb (Duration: 0.4ms | Allocations: 53)
+  Rendered expenses/_expense.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered expenses/_expense.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered expenses/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 946)
+  Rendered home/_navbar.html.erb (Duration: 0.6ms | Allocations: 226)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 2536)
+Completed 200 OK in 28ms (Views: 17.1ms | ActiveRecord: 2.8ms | Allocations: 3785)
+  [1m[36mExpense Sum (0.8ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 21], ["author_id", 14]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Utilities"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Utilities"], ["icon", "https://source.unsplash.com/random"], ["created_at", "2023-10-20 15:55:13.939476"], ["updated_at", "2023-10-20 15:55:13.939476"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "foo@bar.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tester"], ["created_at", "2023-10-20 15:55:13.948685"], ["updated_at", "2023-10-20 15:55:13.948685"], ["email", "foo@bar.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.8ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Food"], ["amount", 50], ["created_at", "2023-10-20 15:55:13.956722"], ["updated_at", "2023-10-20 15:55:13.956722"], ["author_id", 15]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Water"], ["amount", 10], ["created_at", "2023-10-20 15:55:13.965374"], ["updated_at", "2023-10-20 15:55:13.965374"], ["author_id", 15]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mExpense Create (0.8ms)[0m  [1m[32mINSERT INTO "expenses" ("name", "amount", "created_at", "updated_at", "author_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Groceries"], ["amount", 30], ["created_at", "2023-10-20 15:55:13.974208"], ["updated_at", "2023-10-20 15:55:13.974208"], ["author_id", 15]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (1.1ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 22], ["expense_id", 35], ["created_at", "2023-10-20 15:55:13.987166"], ["updated_at", "2023-10-20 15:55:13.987166"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.7ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 22], ["expense_id", 36], ["created_at", "2023-10-20 15:55:13.999787"], ["updated_at", "2023-10-20 15:55:13.999787"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[36mCategoryExpense Create (0.9ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 22], ["expense_id", 37], ["created_at", "2023-10-20 15:55:14.010425"], ["updated_at", "2023-10-20 15:55:14.010425"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2023-10-20 16:55:14 +0100
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mExpense Sum (0.6ms)[0m  [1m[34mSELECT SUM("expenses"."amount") FROM "expenses" INNER JOIN "category_expenses" ON "expenses"."id" = "category_expenses"."expense_id" LEFT OUTER JOIN "category_expenses" "category_expenses_expenses" ON "category_expenses_expenses"."expense_id" = "expenses"."id" WHERE "category_expenses"."category_id" = $1 AND "expenses"."author_id" = $2[0m  [["category_id", 22], ["author_id", 15]]
+  Rendered home/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 826)
+  Rendered home/_navbar.html.erb (Duration: 0.4ms | Allocations: 148)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 2338)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 1.3ms | Allocations: 2553)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
